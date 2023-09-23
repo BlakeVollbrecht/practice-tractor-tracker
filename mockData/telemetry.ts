@@ -1,4 +1,11 @@
-[
+export type TelemetryPoint = {
+  time: string
+  rpm: number
+  lat: number
+  lng: number
+}
+
+export const data: Array<TelemetryPoint> = [
   {
     "time": "2023-09-22T16:27:07Z",
     "rpm": 1200,
