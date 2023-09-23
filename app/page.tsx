@@ -19,7 +19,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="pt-16">
+      <div className="pt-16 pb-32">
         <Tractors />
       </div>
     </main>
