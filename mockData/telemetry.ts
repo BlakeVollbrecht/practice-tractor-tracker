@@ -5,7 +5,15 @@ export type TelemetryPoint = {
   lng: number
 }
 
-export const data: Array<TelemetryPoint> = [
+export function getTelemetry(tractorId: string) {
+  if (tractorId === "1") {
+    return data
+  } else {
+    return null
+  }
+}
+
+const data: TelemetryPoint[] = [
   {
     "time": "2023-09-22T16:27:07Z",
     "rpm": 1200,

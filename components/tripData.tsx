@@ -11,23 +11,33 @@ import {
 } from "recharts"
 import { format as formatDate } from "date-fns"
 
-import { TelemetryPoint } from "@/mockData/telemetry"
+import { getTelemetry } from "@/mockData/telemetry"
 
 interface Props {
-  data: Array<TelemetryPoint>
+  tractorId: string
 }
 
-export default function TripData({ data }: Props) {
+export default function TripData({ tractorId }: Props) {
   const [pointTime, setPointTime] = useState("")
+
+  const telemetryData = getTelemetry(tractorId)
 
   function formatTime(time: string) {
     return formatDate(new Date(time), "h:mm aaa")
   }
 
+  if (!telemetryData) {
+    return (
+      <div className="flex justify-center py-24">
+        <p>{"<No Data>"}</p>
+      </div>
+    )
+  }
+
   return (
     <div>
-      <Map height={500} defaultCenter={[43.51559, -80.60789]} defaultZoom={15}>
-        {data.map((point) => (
+      <Map height={400} defaultCenter={[43.51559, -80.60789]} defaultZoom={15}>
+        {telemetryData.map((point) => (
           <Marker
             className="pl-3"
             key={point.time}
@@ -46,7 +56,7 @@ export default function TripData({ data }: Props) {
         ))}
       </Map>
       <ResponsiveContainer className="pt-4" height={200}>
-        <LineChart data={data}>
+        <LineChart data={telemetryData}>
           <Line
             type="linear"
             dataKey="rpm"

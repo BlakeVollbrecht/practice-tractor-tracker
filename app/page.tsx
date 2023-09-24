@@ -1,4 +1,4 @@
-import Tractors from "./components/tractors"
+import Tractors from "../components/tractors"
 
 export default function Home() {
   return (
