@@ -16,7 +16,7 @@ import TripData from "./tripData"
 import { tractors } from "@/mockData/tractors"
 
 export default function Tractors() {
-  const [tractorId, setTractorId] = useState("")
+  const [tractorId, setTractorId] = useState<string>()
 
   return (
     <div>

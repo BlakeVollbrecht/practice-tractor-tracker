@@ -5,7 +5,7 @@ export type TelemetryPoint = {
   lng: number
 }
 
-export function getTelemetry(tractorId: string) {
+export function getTelemetry(tractorId?: string) {
   if (tractorId === "1") {
     return data
   } else {

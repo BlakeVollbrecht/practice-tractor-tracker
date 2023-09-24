@@ -14,7 +14,7 @@ import { format as formatDate } from "date-fns"
 import { getTelemetry } from "@/mockData/telemetry"
 
 interface Props {
-  tractorId: string
+  tractorId?: string
 }
 
 export default function TripData({ tractorId }: Props) {
