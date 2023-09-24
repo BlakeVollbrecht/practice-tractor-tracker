@@ -1,12 +1,16 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import "./globals.css"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 
-const inter = Inter({ subsets: ['latin'] })
+import { MainNav } from "@/components/mainNav"
+import Link from "next/link"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'Tractor Tracker',
-  description: 'Tracks tractors on trajected treks to traverse trails and trim tracts',
+  title: "Tractor Tracker",
+  description:
+    "Tracks tractors on trajected treks to traverse trails and trim tracts",
 }
 
 export default function RootLayout({
@@ -16,7 +20,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} min-h-screen`}>
+        <div className="border-b">
+          <div className="flex h-16 items-center px-4">
+            <Link href="/">
+              <h1>Tractor Tracker</h1>
+            </Link>
+            <MainNav className="ml-12 mr-6" />
+            <div className="ml-auto flex items-center space-x-4">
+              <a
+                className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+                href="https://github.com/blakevollbrecht"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                By Blake
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {children}
+      </body>
     </html>
   )
 }
