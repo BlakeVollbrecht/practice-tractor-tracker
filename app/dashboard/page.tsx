@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-import TripData from "./tripData"
+import TripData from "@/components/tripData"
 
 import { tractors } from "@/mockData/tractors"
 
