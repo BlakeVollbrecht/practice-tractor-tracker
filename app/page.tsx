@@ -6,11 +6,13 @@ export default function Home() {
     <main>
       <div className="flex justify-center space-x-4 pt-16 pb-32 px-4">
         <Link href="/dashboard">
-          <Card className="hover:bg-slate-50">
+          <Card className="hover:bg-slate-300/10">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 space-x-4 pb-2">
               <CardTitle className="text-sm font-medium">Dashboard</CardTitle>
               <svg
-                className="h-6 w-6 text-muted-foreground"
+                className="h-6 w-6"
+                fill="currentColor"
+                stroke="currentColor"
                 focusable="false"
                 aria-hidden="true"
                 viewBox="0 0 24 24"
@@ -20,7 +22,9 @@ export default function Home() {
             </CardHeader>
             <CardContent className="flex justify-center pt-2 pb-6">
               <svg
-                className="h-10 w-10 text-muted-foreground"
+                className="h-10 w-10"
+                fill="currentColor"
+                stroke="currentColor"
                 focusable="false"
                 aria-hidden="true"
                 viewBox="0 0 24 24"
@@ -32,11 +36,13 @@ export default function Home() {
           </Card>
         </Link>
         <Link href="/settings">
-          <Card className="hover:bg-slate-50">
+          <Card className="hover:bg-slate-300/10">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 space-x-4 pb-2">
               <CardTitle className="text-sm font-medium">Settings</CardTitle>
               <svg
-                className="h-6 w-6 text-muted-foreground"
+                className="h-6 w-6"
+                fill="currentColor"
+                stroke="currentColor"
                 focusable="false"
                 aria-hidden="true"
                 viewBox="0 0 24 24"
@@ -46,7 +52,9 @@ export default function Home() {
             </CardHeader>
             <CardContent className="flex justify-center pt-2 pb-6">
               <svg
-                className="h-10 w-10 text-muted-foreground"
+                className="h-10 w-10"
+                fill="currentColor"
+                stroke="currentColor"
                 focusable="false"
                 aria-hidden="true"
                 viewBox="0 0 24 24"
