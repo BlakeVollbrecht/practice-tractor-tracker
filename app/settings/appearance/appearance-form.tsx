@@ -33,9 +33,14 @@ type AppearanceFormValues = z.infer<typeof appearanceFormSchema>
 export function AppearanceForm() {
   const { setTheme } = useTheme()
 
-  const storedTheme = localStorage.getItem(THEME_KEY)
+  let theme: "light" | "dark" = "light"
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem(THEME_KEY) === "dark") {
+      theme = "dark"
+    }
+  }
   const defaultValues: Partial<AppearanceFormValues> = {
-    theme: storedTheme === "dark" ? "dark" : "light",
+    theme: theme,
   }
 
   const form = useForm<AppearanceFormValues>({
@@ -44,11 +49,13 @@ export function AppearanceForm() {
   })
 
   function handleThemeChange(onChange: any) {
-
-    return function(value: any) {
+    return function (value: any) {
       setTheme(value)
-      localStorage.setItem(THEME_KEY, value)
       onChange(value)
+
+      if (typeof window !== "undefined") {
+        localStorage.setItem(THEME_KEY, value)
+      }
     }
   }
 
