@@ -11,16 +11,10 @@ import {
 } from "recharts"
 import { format as formatDate } from "date-fns"
 
-import { getTelemetry } from "@/mockData/telemetry"
+import { data as telemetryData } from "@/mockData/telemetry"
 
-interface Props {
-  tractorId?: string
-}
-
-export default function TripData({ tractorId }: Props) {
+export default function TripData() {
   const [pointTime, setPointTime] = useState("")
-
-  const telemetryData = getTelemetry(tractorId)
 
   function formatTime(time: string) {
     return formatDate(new Date(time), "h:mm aaa")
