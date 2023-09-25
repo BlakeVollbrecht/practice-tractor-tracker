@@ -12,8 +12,7 @@ export function MainNav({
   const pathname = usePathname()
 
   const navItems = [
-    { title: "Tractors", href: "/tractors" },
-    { title: "Fields", href: "/fields" },
+    { title: "Dashboard", href: "/dashboard" },
     { title: "Settings", href: "/settings" },
   ]
 
