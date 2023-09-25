@@ -29,7 +29,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="border-b">
-            <div className="flex h-16 items-center px-4">
+            <div className="flex h-16 items-center px-4 max-w-screen-xl mx-auto">
               <Link href="/">
                 <h1>Tractor Tracker</h1>
               </Link>
