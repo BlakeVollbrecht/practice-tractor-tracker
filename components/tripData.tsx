@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Map, Marker } from "pigeon-maps"
 import {
   CartesianGrid,
@@ -14,8 +13,6 @@ import { format as formatDate } from "date-fns"
 import { data as telemetryData } from "@/mockData/telemetry"
 
 export default function TripData() {
-  const [pointTime, setPointTime] = useState("")
-
   function formatTime(time: string) {
     return formatDate(new Date(time), "h:mm aaa")
   }
@@ -37,7 +34,6 @@ export default function TripData() {
             key={point.time}
             width={20}
             anchor={[point.lat, point.lng]}
-            onMouseOver={() => setPointTime(point.time)}
           >
             <svg
               className="w-1.5 h-1.5"
@@ -51,12 +47,7 @@ export default function TripData() {
       </Map>
       <ResponsiveContainer className="pt-4" height={200}>
         <LineChart data={telemetryData}>
-          <Line
-            type="linear"
-            dataKey="rpm"
-            stroke="#f20"
-            onMouseOver={(x, ev) => console.log(ev.target)}
-          />
+          <Line type="linear" dataKey="rpm" stroke="#f20" />
           <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
           <XAxis dataKey="time" tickFormatter={formatTime} />
           <YAxis label={{ value: "RPM", angle: -90, position: "insideLeft" }} />
