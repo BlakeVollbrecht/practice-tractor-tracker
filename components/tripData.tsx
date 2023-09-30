@@ -33,7 +33,7 @@ export default function TripData() {
       <Map height={400} defaultCenter={[43.51559, -80.60789]} defaultZoom={15}>
         {telemetryData.map((point) => (
           <Marker
-            className="pl-3"
+            className="pl-2 pt-5"
             key={point.time}
             width={20}
             anchor={[point.lat, point.lng]}
